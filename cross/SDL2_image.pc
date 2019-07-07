@@ -1,0 +1,9 @@
+prefix=PREFIX_GOES_HERE
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: SDL2_image
+Description:
+Version: 2.0.0
+Libs: -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS='["png"]'
