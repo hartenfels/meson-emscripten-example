@@ -12,9 +12,6 @@ RUN apt-get update \
  && ./emsdk install latest \
  && ./emsdk activate latest \
  && . ./emsdk_env.sh \
- && cd / \
- && echo 'int main(void) { return 0; }' > t.c \
- && emcc -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS='["png"]' -lGLEW -o t.js t.c \
  && cd cglm \
  && sh autogen.sh \
  && mkdir /emprefix \
