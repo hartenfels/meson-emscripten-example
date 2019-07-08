@@ -21,8 +21,6 @@ RUN apt-get update \
  && emconfigure ./configure --prefix=/emprefix \
  && emmake make \
  && emmake make install \
- && sdl2_image_dir="$(find ~/.emscripten_ports -name 'SDL_image.h' | head -n 1 | xargs dirname)" \
- && ln -s "$sdl2_image_dir" /emprefix/include/SDL2 \
  && sed -e 's/PREFIX_GOES_HERE/\/emprefix/' /cross/emscripten.cross > /emscripten.cross \
  && sed -e 's/PREFIX_GOES_HERE/\/emprefix/' /cross/glew.pc > /emprefix/lib/pkgconfig/glew.pc \
  && sed -e 's/PREFIX_GOES_HERE/\/emprefix/' /cross/SDL2_image.pc > /emprefix/lib/pkgconfig/SDL2_image.pc
